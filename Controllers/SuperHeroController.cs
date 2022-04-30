@@ -29,7 +29,7 @@ namespace SuperHeroAPI.Controllers
             {
                 return BadRequest("Hero not found.");
             }
-            //return Ok(heroes[id]);
+
             return Ok(hero);
         }
 
@@ -78,7 +78,7 @@ namespace SuperHeroAPI.Controllers
             
             _context.SuperHeroes.Remove(dbHero);
             await _context.SaveChangesAsync();
-
+            
             return Ok(await _context.SuperHeroes.ToListAsync());
         }
     }
